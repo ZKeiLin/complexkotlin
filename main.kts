@@ -34,20 +34,18 @@ val r2 = process("FOO", {r2_message.toUpperCase().repeat(3)}) // call process() 
             // r2_message, and repeats it three times with no spaces: "WOOGAWOOGAWOOGA"
 
 
+
 // write an enum-based state machine between talking and thinking
-/*
-This is going to be a peculiar use of enum, 
-however, as we are going to model a very simple state machine: a
-s everybody knows, 
-philosophers split their time between 
-THINKING and TALKING, 
-and only shift from one state to the other when told to do so via the method call signal. 
-Additionally, each state should override the toString function so that 
-when THINKING, a philosopher will return "Deep thoughts..." and
-when TALKING, a philosopher will return "Allow me to suggest an idea...". 
-If you are not sure of the syntax here, check out the Kotlin reference page on Enum classes. 
-Modeling state machines in a mobile application is a very common occurrence, so it's worth taking the time to give this exercise a shot.
+
+/*  For Bonus:
+ 
+    Seneca The Younger was a Roman Stoic philosopher and rhetorician.
+    He is a tutor and advisor to emperor Nero.
+    He is commonly associated with Stoicism, which required people to avoid 
+    disturbing influences such as joy, anger, grief, etc. and believed 
+    that passions should be controlled using reason.
  */
+
 enum class Philosopher { 
     THINKING {
         override fun signal() = TALKING;
@@ -72,8 +70,6 @@ class Command(val prompt: String) {
         return prompt+message
     }
 }
-
-
 
 
 // ================================
